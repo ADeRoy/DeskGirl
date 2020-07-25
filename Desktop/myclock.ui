@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyClock</class>
+ <widget class="QWidget" name="MyClock">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	border: none; /* no border for a flat push button */	
+
+	border-image: url(:back.jpg);
+}
+
+</string>
+  </property>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

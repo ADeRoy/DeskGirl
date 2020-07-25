@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <widget class="QPushButton" name="setting_Button">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>90</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	border: none; /* no border for a flat push button */	
+
+	border-image: url(:/src/menu/setting.png);
+	background-color: rgb(0, 0, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+QPushButton::hover {
+	
+	background-image: url(:/src/menu/setting.png);
+	background-color: rgb(0, 170, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_button">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>150</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	border: none; /* no border for a flat push button */	
+
+	border-image: url(:/src/menu/sub.png);
+	background-color: rgb(0, 0, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+QPushButton::hover {
+	
+	background-image: url(:/src/menu/sub.png);
+	background-color: rgb(0, 170, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="quit_button">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>210</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	border: none; /* no border for a flat push button */	
+	background-color: rgb(0, 0, 0);
+	border-image: url(:/src/menu/quit.png);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+QPushButton::hover {
+	
+	background-image: url(:/src/menu/quit.png);
+	background-color: rgb(255, 0, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

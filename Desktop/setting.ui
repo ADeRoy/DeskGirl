@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Setting</class>
+ <widget class="QWidget" name="Setting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>313</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Setting{
+	background-color: rgb(207, 231, 244);
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}</string>
+  </property>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>0</y>
+     <width>34</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	border: none; /* no border for a flat push button */
+	image: url(:/src/menu/shut.png); /* 最小化 */
+	min-width: 34px;
+	max-width: 34px;
+	min-height: 40px;
+	max-height: 40px;
+}
+QPushButton::hover {
+	background-color: #f57575; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>281</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
+	border-radius:5px;
+}</string>
+   </property>
+   <property name="title">
+    <string>人物状态</string>
+   </property>
+   <widget class="QRadioButton" name="happy_radioButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>开心（喜）</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="anger_radioButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>89</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>愤怒（怒）</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="grief_radioButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>89</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>哀伤（哀）</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>230</y>
+     <width>281</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
+	border-radius:5px;
+}</string>
+   </property>
+   <property name="title">
+    <string>自定义桌面壁纸</string>
+   </property>
+   <widget class="QPushButton" name="select_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#select_pushButton{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#select_pushButton:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#select_pushButton:pressed {
+	background-color: rgb(3, 130, 176);
+}</string>
+    </property>
+    <property name="text">
+     <string>选择</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="apply_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#apply_pushButton{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#apply_pushButton:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#apply_pushButton:pressed {
+	background-color: rgb(3, 130, 176);
+}</string>
+    </property>
+    <property name="text">
+     <string>应用</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
