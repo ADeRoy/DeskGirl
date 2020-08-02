@@ -11,6 +11,7 @@
 #include <QMenu>
 
 #include "setting.h"
+#include "Screen/screen.h"
 
 namespace Ui {
 class Widget;
@@ -23,9 +24,15 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget();
+signals:
+    void default_DeskTop();     //默认数字时钟壁纸
+    void start_screenShot();    //开始截屏信号
 private slots:
     void frame_refreshTime();
     void Setting_status_change(int);
+    void Setting_status2_change(int);
+    void Setting_mode_change(int);
+    void Setting_status_isAction(bool);
 private slots:
     void on_quit_button_clicked();
 
@@ -33,6 +40,9 @@ private slots:
 
     void on_add_button_clicked();
 
+    void on_screen_shot_clicked();
+private slots:
+    int OnSystemTrayClicked(QSystemTrayIcon::ActivationReason reason);
 protected:
     // Event handlers
     virtual void mousePressEvent(QMouseEvent *event);
@@ -48,6 +58,7 @@ public:
     QPoint mouseDeskTopLeft;   //鼠标相对于桌面左上角坐标         在mouseMoveEvent实时获取
     QPoint windowDeskTopLeft;  //窗口左上角相对于桌面左上角坐标    在mouseMoveEvent实时计算(矢量)获得
 private:
+    int mode;   //人物模型
     int status; //人物状态
 private:
     Ui::Widget *ui;
@@ -65,6 +76,8 @@ private:
 private:
     /*应用菜单*/
     Setting* setting;
+    /*屏幕截图*/
+    Screen * screen;
 };
 
 #endif // WIDGET_H

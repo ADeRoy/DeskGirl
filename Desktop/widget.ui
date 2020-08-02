@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>600</height>
+    <width>500</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -77,7 +77,7 @@ QPushButton::hover {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>150</y>
+        <y>190</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -113,7 +113,7 @@ QPushButton::hover {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>210</y>
+        <y>250</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -142,6 +142,48 @@ QPushButton::hover {
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="screen_shot">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>140</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	border: none; /* no border for a flat push button */	
+
+	border-image: url(:/src/menu/capture_active_normal.png);
+	background-color: rgb(0, 0, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+QPushButton::hover {
+	
+	background-image: url(:/src/menu/capture_active_checked.png);
+	background-color: rgb(0, 170, 0);
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </widget>

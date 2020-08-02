@@ -14,7 +14,6 @@
         <file>src/action3/4.png</file>
         <file>src/menu/setting.png</file>
         <file>src/menu/add.png</file>
-        <file>src/menu/capture.png</file>
         <file>src/menu/music_player.png</file>
         <file>src/menu/quit.png</file>
         <file>src/menu/sub.png</file>
@@ -34,5 +33,43 @@
         <file>src/back/7.jpg</file>
         <file>src/back/8.jpg</file>
         <file>src/back/back2.jpg</file>
+        <file>src/menu/capture_active_checked.png</file>
+        <file>src/menu/capture_active_normal.png</file>
+        <file>src/boy1/1.png</file>
+        <file>src/boy1/2.png</file>
+        <file>src/boy1/3.png</file>
+        <file>src/boy1/4.png</file>
+        <file>src/boy1/5.png</file>
+        <file>src/boy1/6.png</file>
+        <file>src/girl1/1.png</file>
+        <file>src/girl1/2.png</file>
+        <file>src/girl1/3.png</file>
+        <file>src/girl1/4.png</file>
+        <file>src/girl1/5.png</file>
+        <file>src/girl1/6.png</file>
+        <file>src/default/action1/1.png</file>
+        <file>src/default/action1/2.png</file>
+        <file>src/default/action1/3.png</file>
+        <file>src/default/action1/4.png</file>
+        <file>src/default/action1/5.png</file>
+        <file>src/default/action1/6.png</file>
+        <file>src/default/action2/1.png</file>
+        <file>src/default/action2/2.png</file>
+        <file>src/default/action2/3.png</file>
+        <file>src/default/action2/4.png</file>
+        <file>src/default/action2/5.png</file>
+        <file>src/default/action2/6.png</file>
+        <file>src/default/action3/1.png</file>
+        <file>src/default/action3/2.png</file>
+        <file>src/default/action3/3.png</file>
+        <file>src/default/action3/4.png</file>
+        <file>src/default/action3/5.png</file>
+        <file>src/default/action3/6.png</file>
+        <file>src/default/action4/1.png</file>
+        <file>src/default/action4/2.png</file>
+        <file>src/default/action4/3.png</file>
+        <file>src/default/action4/4.png</file>
+        <file>src/default/action4/5.png</file>
+        <file>src/default/action4/6.png</file>
     </qresource>
 </RCC>

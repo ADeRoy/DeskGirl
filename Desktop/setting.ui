@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>313</width>
-    <height>449</height>
+    <width>411</width>
+    <height>394</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
   <widget class="QPushButton" name="close_button">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>370</x>
      <y>0</y>
      <width>34</width>
      <height>40</height>
@@ -46,96 +46,145 @@ QPushButton::hover {
     <string/>
    </property>
   </widget>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QPushButton" name="AppSettingButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>281</width>
-     <height>131</height>
+     <x>300</x>
+     <y>50</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QGroupBox{	
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
-	border-radius:5px;
+    <string notr="true">QPushButton#AppSettingButton{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#AppSettingButton:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#AppSettingButton:pressed {
+	background-color: rgb(3, 130, 176);
+}
+
+QPushButton#AppSettingButton::checked{
+	color: #ffffff;
+	border-bottom:2px solid #43c052;
 }</string>
    </property>
-   <property name="title">
-    <string>人物状态</string>
+   <property name="text">
+    <string>设置</string>
    </property>
-   <widget class="QRadioButton" name="happy_radioButton">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>81</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>开心（喜）</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="anger_radioButton">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>70</y>
-      <width>89</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>愤怒（怒）</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="grief_radioButton">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>100</y>
-      <width>89</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>哀伤（哀）</string>
-    </property>
-   </widget>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QGroupBox" name="groupBox_2">
+  <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>230</y>
+     <x>10</x>
+     <y>10</y>
      <width>281</width>
-     <height>171</height>
+     <height>371</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QGroupBox{	
+    <string notr="true">QStackedWidget{	
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
 	border-radius:5px;
 }</string>
    </property>
-   <property name="title">
-    <string>自定义桌面壁纸</string>
+   <property name="currentIndex">
+    <number>1</number>
    </property>
-   <widget class="QPushButton" name="select_pushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton#select_pushButton{
+   <widget class="QWidget" name="page">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>281</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
+	border-radius:5px;
+}</string>
+     </property>
+     <property name="title">
+      <string>程序设置</string>
+     </property>
+     <widget class="QCheckBox" name="autorun_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>开机自启</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="action_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>80</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>人物动作</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>281</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox{	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
+	border-radius:5px;
+}</string>
+      </property>
+      <property name="title">
+       <string>自定义桌面壁纸</string>
+      </property>
+      <widget class="QPushButton" name="select_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#select_pushButton{
 	
 	color: rgb(255, 255, 255);
 	border-style: solid;
@@ -149,29 +198,30 @@ QPushButton#select_pushButton:hover{
 
 QPushButton#select_pushButton:pressed {
 	background-color: rgb(3, 130, 176);
-}</string>
-    </property>
-    <property name="text">
-     <string>选择</string>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="apply_pushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton#apply_pushButton{
+}
+</string>
+       </property>
+       <property name="text">
+        <string>选择壁纸</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="apply_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#apply_pushButton{
 	
 	color: rgb(255, 255, 255);
 	border-style: solid;
@@ -186,19 +236,477 @@ QPushButton#apply_pushButton:hover{
 QPushButton#apply_pushButton:pressed {
 	background-color: rgb(3, 130, 176);
 }</string>
-    </property>
-    <property name="text">
-     <string>应用</string>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
+       </property>
+       <property name="text">
+        <string>数字时钟</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>281</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
+	border-radius:5px;
+}</string>
+     </property>
+     <property name="title">
+      <string>人物状态</string>
+     </property>
+     <widget class="QRadioButton" name="happy_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>81</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>开心（喜）</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoRepeat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="anger_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>89</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>愤怒（怒）</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="grief_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>89</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>哀伤（哀）</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="girl1_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>275</width>
+        <height>350</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="src.qrc">:/src/action1/1.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <property name="openExternalLinks">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="mode1_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>模型一</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>281</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 241, 249, 0), stop:0.1 rgba(232, 241, 249, 1), stop:0.2 rgba(232, 241, 249, 255), stop:0.7 rgba(232, 241, 249, 255),stop:1 rgba(252, 252, 252, 255));
+	border-radius:5px;
+}</string>
+     </property>
+     <property name="title">
+      <string>人物状态</string>
+     </property>
+     <widget class="QRadioButton" name="happy2_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>81</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>开心（喜）</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="anger2_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>89</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>哀怨（伤）</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="grief2_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>89</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>调皮（皮）</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="shy_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>130</y>
+        <width>89</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>害羞（羞）</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="girl2_label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>150</y>
+        <width>180</width>
+        <height>180</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="src.qrc">:/src/default/action1/1.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="mode2_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>40</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>模型二</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QLabel" name="boy_label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>0</y>
+       <width>201</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="src.qrc">:/src/boy1/1.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="mode3_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模型三</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4">
+    <widget class="QLabel" name="girl3_lable">
+     <property name="geometry">
+      <rect>
+       <x>-20</x>
+       <y>0</y>
+       <width>321</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="src.qrc">:/src/girl1/1.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="mode4_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模型四</string>
+     </property>
+    </widget>
    </widget>
   </widget>
+  <widget class="QPushButton" name="TopPeopleButton">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>110</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#TopPeopleButton{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#TopPeopleButton:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#TopPeopleButton:pressed {
+	background-color: rgb(3, 130, 176);
+}
+
+QPushButton#TopPeopleButton::checked{
+	color: #ffffff;
+	border-bottom:2px solid #43c052;
+}</string>
+   </property>
+   <property name="text">
+    <string>人物模型1</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="TopPeopleButton_2">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>180</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#TopPeopleButton_2{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#TopPeopleButton_2:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#TopPeopleButton_2:pressed {
+	background-color: rgb(3, 130, 176);
+}
+
+QPushButton#TopPeopleButton_2::checked{
+	color: #ffffff;
+	border-bottom:2px solid #43c052;
+}</string>
+   </property>
+   <property name="text">
+    <string>人物模型2</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="TopPeopleButton_3">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>250</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#TopPeopleButton_3{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#TopPeopleButton_3:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#TopPeopleButton_3:pressed {
+	background-color: rgb(3, 130, 176);
+}
+
+QPushButton#TopPeopleButton_3::checked{
+	color: #ffffff;
+	border-bottom:2px solid #43c052;
+}</string>
+   </property>
+   <property name="text">
+    <string>人物模型3</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="TopPeopleButton_4">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>320</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#TopPeopleButton_4{
+	
+	color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 5px;	
+	background-color: rgb(6, 163, 220);
+}
+
+QPushButton#TopPeopleButton_4:hover{
+	background-color: rgb(16, 196, 245);
+}
+
+QPushButton#TopPeopleButton_4:pressed {
+	background-color: rgb(3, 130, 176);
+}
+
+QPushButton#TopPeopleButton_4::checked{
+	color: #ffffff;
+	border-bottom:2px solid #43c052;
+}</string>
+   </property>
+   <property name="text">
+    <string>人物模型4</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="src.qrc"/>
+ </resources>
  <connections/>
 </ui>

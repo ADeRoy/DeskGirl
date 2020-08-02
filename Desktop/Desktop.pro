@@ -29,13 +29,15 @@ SOURCES += \
         widget.cpp \
     setting.cpp \
     finddesktop/finddesktop.cpp \
-    myclock.cpp
+    myclock.cpp \
+    Screen/screen.cpp
 
 HEADERS += \
         widget.h \
     setting.h \
     finddesktop/finddesktop.h \
-    myclock.h
+    myclock.h \
+    Screen/screen.h
 
 FORMS += \
         widget.ui \
@@ -49,3 +51,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     src.qrc
+RC_ICONS = DeskGirl.ico
