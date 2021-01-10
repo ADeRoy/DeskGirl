@@ -33,6 +33,7 @@ private slots:
     void Setting_status2_change(int);
     void Setting_mode_change(int);
     void Setting_status_isAction(bool);
+    void Setting_window_isTop(bool);
 private slots:
     void on_quit_button_clicked();
 

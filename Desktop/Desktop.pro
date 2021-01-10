@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
+    player/vlcplayer.cpp \
         widget.cpp \
     setting.cpp \
     finddesktop/finddesktop.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     Screen/screen.cpp
 
 HEADERS += \
+    player/vlcplayer.h \
         widget.h \
     setting.h \
     finddesktop/finddesktop.h \
@@ -44,6 +46,13 @@ FORMS += \
     setting.ui \
     myclock.ui
 
+win32{
+    INCLUDEPATH += $$PWD/sdk/include
+    LIBS += -L$$PWD/sdk/lib -llibvlc -llibvlccore
+}else{
+    INCLUDEPATH += /usr/local/include
+    LIBS += -L/usr/local/lib -lvlc -lvlccore
+}
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

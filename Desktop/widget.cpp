@@ -12,7 +12,6 @@ Widget::Widget(QWidget *parent) :
     Widget_var_init();  //初始化变量
     Menu_init();        //初始化菜单
     UI_Init();          //初始化UI
-
     ui->widget->setStyleSheet(QString("background-image:url(:/src/action1/%1.png);").arg(1));
 }
 
@@ -105,6 +104,17 @@ void Widget::Setting_status_isAction(bool isActive)
     }
 }
 
+void Widget::Setting_window_isTop(bool flag)
+{
+    qDebug()<<"dsakldjaslkj"<<endl;
+    if(flag){
+        SetWindowPos(HWND(this->winId()), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+    }
+    else {
+        SetWindowPos(HWND(this->winId()), HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+    }
+}
+
 void Widget::mousePressEvent(QMouseEvent *event)
 {
     mouseWindowTopLeft = event->pos();
@@ -162,6 +172,7 @@ void Widget::Widget_var_init()
     connect(setting,SIGNAL(status_isAction(bool)),this,SLOT(Setting_status_isAction(bool)));
     connect(setting,SIGNAL(mode_check_index(int)),this,SLOT(Setting_mode_change(int)));
     connect(setting,SIGNAL(status2_check_index(int)),this,SLOT(Setting_status2_change(int)));
+    connect(setting,SIGNAL(window_isTop(bool)),this,SLOT(Setting_window_isTop(bool)));
     setting->default_DeskTop();
 
     screen = new Screen;

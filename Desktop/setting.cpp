@@ -9,11 +9,16 @@ Setting::Setting(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);      //去掉标题栏
+    flags = windowFlags();
     Setting_Init();
 }
 
 Setting::~Setting()
 {
+    delete LabWidget;
+    delete bkWidget;
+    delete srcLabel;
+    delete player;
     delete ui;
 }
 
@@ -55,6 +60,24 @@ void Setting::slot_CheckButton_checket(int ButtonId)
             emit status_isAction(true);
         }
         break;
+    case 2:
+        if(temp->isChecked())
+        {
+            emit window_isTop(true);
+        }
+        else {
+            emit window_isTop(false);
+        }
+        break;
+    case 3:
+        if(temp->isChecked())
+        {
+            player->set_media_player_sound(0);
+        }
+        else {
+            player->set_media_player_sound(100);
+        }
+        break;
     }
     write_ini();
 }
@@ -65,6 +88,12 @@ void Setting::slot_modeButton_checket(int ButtonId)
     emit mode_check_index(ButtonId);
 }
 
+void Setting::slot_media_player_stop()
+{
+    qDebug()<<"player Stop"<<endl;
+    player->media_replay();
+}
+
 void Setting::on_select_pushButton_clicked()
 {
     srcLabel->setParent(bkWidget);
@@ -73,12 +102,12 @@ void Setting::on_select_pushButton_clicked()
 
 
     srcPath =QFileDialog::getOpenFileName(this,QString::fromLocal8Bit("选择文件"),"",
-                                          QString::fromLocal8Bit("媒体文件( *.gif *.jpg *.png)"));
+                                          QString::fromLocal8Bit("媒体文件( *.gif *.jpg *.png *.mp4)"));
 
     if(srcPath != "" && (srcPath.contains(".jpg")||srcPath.contains(".png")))//jpg,png
     {
-
         srcLabel->setPixmap(QPixmap(srcPath));
+        player->media_stop();
         if(desktopWnd) //设置父窗体为桌面
         {
             SetParent((HWND)bkWidget->winId(), desktopWnd);
@@ -93,6 +122,7 @@ void Setting::on_select_pushButton_clicked()
     {
         QMovie* m_movie = new QMovie(srcPath);
         srcLabel->setMovie(m_movie);
+        player->media_stop();
         m_movie->start();//开始播放图片
         if(desktopWnd)  //设置父窗体为桌面
         {
@@ -102,6 +132,36 @@ void Setting::on_select_pushButton_clicked()
         bkWidget->setWindowFlags(Qt::FramelessWindowHint); //无边框
         bkWidget->showFullScreen();                        //全屏
         qDebug()<<"success";
+        return;
+    }
+    if(srcPath != "" && srcPath.contains(".mp4"))   //音频文件
+    {
+        qDebug()<<"URL:"<<srcPath<<endl;
+        //vlc不识别这个URL需要转换一下
+        if(srcPath.contains("/"))
+        {
+            srcPath.replace(QString("/"),QString("\\\\"));
+        }
+
+        if(player->get_vlc_state()!=libvlc_Playing)
+        {
+            player->setURL(srcPath);
+            player->set_media_player_hwnd(srcLabel);
+            player->media_play();
+        }
+        else {
+            player->media_stop();
+            player->setURL(srcPath);
+            player->media_play();
+        }
+
+        if(desktopWnd) //设置父窗体为桌面
+        {
+            SetParent((HWND)bkWidget->winId(), desktopWnd);
+            qDebug()<<"over";
+        }
+        bkWidget->setWindowFlags(Qt::FramelessWindowHint); //无边框
+        bkWidget->showFullScreen();                        //全屏
         return;
     }
     qDebug()<<"faile";
@@ -147,7 +207,7 @@ void Setting::Setting_Init()
 
     //选项按钮互斥
     ButtonGroup = new QButtonGroup;
-    ButtonGroup->setExclusive(true);   //重点    设置互斥
+    ButtonGroup->setExclusive(true);   //重点 设置互斥
     ButtonGroup->addButton(ui->AppSettingButton,0);
     ButtonGroup->addButton(ui->TopPeopleButton,1);
     ButtonGroup->addButton(ui->TopPeopleButton_2,2);
@@ -177,6 +237,8 @@ void Setting::Setting_Init()
     AppSetting->setExclusive(false);
     AppSetting->addButton(ui->autorun_checkBox,0);
     AppSetting->addButton(ui->action_checkBox,1);
+    AppSetting->addButton(ui->OnTop_checkBox,2);
+    AppSetting->addButton(ui->silence_checkBox,3);
     connect(AppSetting, SIGNAL(buttonClicked(int)), this,SLOT(slot_CheckButton_checket(int)));
 
     SendMessageToDesktop();                 //发送消息
@@ -184,6 +246,9 @@ void Setting::Setting_Init()
     LabWidget = new MyClock;
     bkWidget = new QWidget;
     srcLabel = new QLabel;
+    player = new VlcPlayer;
+    connect(player,SIGNAL(signal_media_player_stop()),this,SLOT(slot_media_player_stop()));
+
     read_ini();
 }
 
@@ -270,3 +335,4 @@ void Setting::on_TopPeopleButton_4_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+

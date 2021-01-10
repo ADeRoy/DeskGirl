@@ -103,7 +103,7 @@ QPushButton#AppSettingButton::checked{
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QGroupBox" name="groupBox_4">
@@ -137,7 +137,7 @@ QPushButton#AppSettingButton::checked{
        <string>开机自启</string>
       </property>
       <property name="checked">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QCheckBox" name="action_checkBox">
@@ -247,6 +247,38 @@ QPushButton#apply_pushButton:pressed {
         <bool>false</bool>
        </property>
       </widget>
+     </widget>
+     <widget class="QCheckBox" name="OnTop_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>窗口顶置</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="silence_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>视频静音</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
      </widget>
     </widget>
    </widget>

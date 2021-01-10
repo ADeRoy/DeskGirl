@@ -12,6 +12,7 @@
 #include <QMovie>
 #include "myclock.h"
 #include "finddesktop/finddesktop.h"
+#include "player/VlcPlayer.h"
 
 //开机启动注册表
 #define AUTO_RUN "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -33,11 +34,14 @@ signals:
     void status_isAction(bool);         //girl是否动态信号
     void status2_check_index(int index); //girl1状态信号
     void mode_check_index(int index);   //模型发生改变
+    void window_isTop(bool flag);
 private slots:
     void slot_RadioButton_checket(int ButtonId);    //girl1状态发生改变
     void slot_RadioButton2_checket(int ButtonId);   //girl2状态发生改变
     void slot_CheckButton_checket(int ButtonId);    //设置组发生改变
     void slot_modeButton_checket(int ButtonId);     //模型发生改变
+
+    void slot_media_player_stop();  //vlc播放结束通知
 private slots:
     void on_select_pushButton_clicked();
     void on_apply_pushButton_clicked();
@@ -72,6 +76,8 @@ public:
 private:
 
     Ui::Setting *ui;
+
+    Qt::WindowFlags flags;
     QString srcPath;    //选择的图片位置
 
     QButtonGroup* ButtonGroup;  //girl2的设置
@@ -84,6 +90,8 @@ private:
     MyClock* LabWidget; //数字时钟窗口
     QWidget* bkWidget;  //jpg，gif窗口
     QLabel* srcLabel;   //bkWidget的中心部件
+    VlcPlayer* player;  //vlc播放器对象
+
 };
 
 #endif // SETTING_H
